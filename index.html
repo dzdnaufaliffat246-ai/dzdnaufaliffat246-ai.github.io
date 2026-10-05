@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Danish Zaidan — Personal Branding | Web Designer & Network Enthusiast</title>
+<meta name="description" content="Portfolio profesional Danish Zaidan Dzaki Naufaliffat — Web Designer, Network Enthusiast, Visual Creator dari Semarang." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { display: ['Space Grotesk','sans-serif'], body: ['Inter','sans-serif'] },
+      colors: { ink:'#0d0e10', ink2:'#141518', card:'#17181c', line:'rgba(255,255,255,0.08)', accent:'#2b6fff', accent2:'#5b9dff' }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+:root{ --bg:#0d0e10; --bg-2:#121316; --card:#17181c; --line:rgba(255,255,255,0.08); --text:#e8e9ec; --muted:#8a8f99; --accent:#2b6fff; --accent-2:#5b9dff; --off:#f4f4f2; }
+*{scroll-behavior:smooth; -webkit-tap-highlight-color:transparent;}
+html,body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
+h1,h2,h3,.font-display{font-family:'Space Grotesk',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#0a0b0d}
+::-webkit-scrollbar-thumb{background:#23262d;border-radius:10px;border:2px solid #0a0b0d}
+::-webkit-scrollbar-thumb:hover{background:#2b6fff}
+/* Preloader */
+#preloader{position:fixed;inset:0;z-index:100;background:#0a0b0d;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .6s ease, visibility .6s;}
+#preloader.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-logo{width:64px;height:64px;border-radius:16px;background:linear-gradient(180deg,#2b6fff,#1a4ecf);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:24px;color:#fff;box-shadow:0 0 40px rgba(43,111,255,.5);animation:loaderPulse 1.4s ease-in-out infinite;}
+@keyframes loaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.loader-bar{width:180px;height:2px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
+.loader-bar span{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px;animation:loadSlide 1.1s ease-in-out infinite;}
+@keyframes loadSlide{0%{transform:translateX(-100%)}100%{transform:translateX(450%)}}
+/* Progress */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,#2b6fff,#5b9dff,#9cc2ff);z-index:60;box-shadow:0 0 12px rgba(43,111,255,.8)}
+/* Cursor */
+#cursorDot,#cursorRing{position:fixed;top:0;left:0;pointer-events:none;z-index:99;border-radius:50%;}
+#cursorDot{width:6px;height:6px;background:#5b9dff;transform:translate(-50%,-50%);}
+#cursorRing{width:32px;height:32px;border:1px solid rgba(91,157,255,.5);transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,border .25s;}
+@media (hover:none){#cursorDot,#cursorRing{display:none}}
+/* Backgrounds */
+.grain{background-image: radial-gradient(circle at 20% 10%, rgba(43,111,255,0.10), transparent 42%), radial-gradient(circle at 85% 5%, rgba(91,157,255,0.07), transparent 35%), radial-gradient(circle at 50% 100%, rgba(43,111,255,0.06), transparent 45%);}
+.grid-bg{background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);background-size:60px 60px;}
+.noise::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0)) , var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 40px -28px rgba(0,0,0,0.8);transition:border-color .35s, transform .35s, box-shadow .35s;}
+.card-hover:hover{border-color:rgba(43,111,255,.35);transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(0,0,0,.9), 0 0 0 1px rgba(43,111,255,.12), 0 0 30px -10px rgba(43,111,255,.25);}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,0.02);border-radius:999px;}
+.nav-link{position:relative;transition:color .3s;}
+.nav-link::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .3s ease;border-radius:999px;}
+.nav-link:hover::after,.nav-link.active::after{width:100%;}
+.nav-link.active{color:#fff;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
+.bar-track{height:8px;border-radius:999px;background:rgba(255,255,255,0.06);overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.04);}
+.bar-fill{height:100%;border-radius:999px;width:0;transition:width 1.6s cubic-bezier(.2,.7,.2,1);background:linear-gradient(90deg,var(--accent),var(--accent-2));position:relative;box-shadow:0 0 18px rgba(43,111,255,.5);}
+.bar-fill::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:12px;width:12px;border-radius:50%;background:#cfe1ff;box-shadow:0 0 14px rgba(91,157,255,.9);border:2px solid #2b6fff;}
+.deco-ring{border:1px solid rgba(255,255,255,0.06);border-radius:50%;}
+.float{animation:float 9s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.pulse-dot{animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+.hero-photo{border-radius:24px;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(0,0,0,0.9), 0 0 0 1px rgba(43,111,255,0.12) inset;}
+.photo-ring{position:absolute;inset:-18px;border:1px solid rgba(43,111,255,0.18);border-radius:32px;}
+.photo-ring2{position:absolute;inset:-32px;border:1px dashed rgba(43,111,255,.12);border-radius:40px;animation:spinSlow 24s linear infinite;}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.glow-btn{background:linear-gradient(180deg,#2b6fff,#1d54d6);box-shadow:0 10px 30px -10px rgba(43,111,255,0.6), inset 0 1px 0 rgba(255,255,255,0.2);transition:.3s;}
+.glow-btn:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(43,111,255,.7), inset 0 1px 0 rgba(255,255,255,.25);}
+.glow-btn:active{transform:translateY(0) scale(.98);}
+.ghost-btn{border:1px solid var(--line);transition:.3s;background:rgba(255,255,255,.02);backdrop-filter:blur(8px);}
+.ghost-btn:hover{background:rgba(43,111,255,.08);border-color:rgba(43,111,255,0.5);transform:translateY(-2px);}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);border:1px solid var(--line);padding:7px 14px;border-radius:999px;background:rgba(43,111,255,0.06);backdrop-filter:blur(8px);}
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--accent),rgba(43,111,255,.1),transparent);}
+.timeline-item{position:relative;padding-bottom:20px;}
+.timeline-item:last-child{padding-bottom:0;}
+.timeline-item::before{content:'';position:absolute;left:-24px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(43,111,255,0.18);}
+.project-img{transition:transform .8s cubic-bezier(.2,.7,.2,1), filter .6s;}
+.card:hover .project-img{transform:scale(1.06);}
+.img-wrap{overflow:hidden;border-radius:14px;position:relative;border:1px solid rgba(255,255,255,.06);}
+.img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.55));opacity:0;transition:.4s;}
+.card:hover .img-wrap::after{opacity:1;}
+.marquee{display:flex;gap:0;animation:scroll 26s linear infinite;width:max-content;}
+.marquee:hover{animation-play-state:paused;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.quote-card{background:radial-gradient(circle at 0% 0%, rgba(43,111,255,0.14), transparent 55%), var(--card);border:1px solid rgba(43,111,255,0.22);}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;}
+.hud{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.hud-box{border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.55);backdrop-filter:blur(12px);border-radius:12px;}
+.typing-caret{display:inline-block;width:2px;height:1.1em;background:#5b9dff;vertical-align:-0.15em;margin-left:4px;animation:blink 1s step-end infinite;}
+@keyframes blink{50%{opacity:0}}
+.tilt{transform-style:preserve-3d;will-change:transform;}
+.icon-box{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(43,111,255,.08);color:var(--accent-2);border:1px solid rgba(43,111,255,.15);transition:.3s;}
+.card-hover:hover .icon-box{background:var(--accent);color:#fff;box-shadow:0 8px 24px -6px rgba(43,111,255,.6);}
+.skill-card{cursor:pointer;}
+.skill-card.selected{border-color:rgba(43,111,255,.6)!important;box-shadow:0 0 0 1px rgba(43,111,255,.4), 0 20px 40px -20px rgba(43,111,255,.3);}
+.btn-shine{position:relative;overflow:hidden;}
+.btn-shine::before{content:'';position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .6s;}
+.btn-shine:hover::before{left:130%;}
+#networkCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none;}
+.modal-bg{background:rgba(0,0,0,.75);backdrop-filter:blur(10px);}
+.modal-panel{animation:modalIn .4s cubic-bezier(.2,.9,.3,1.2);}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+#toast{transition:transform .4s cubic-bezier(.2,.7,.2,1), opacity .4s;}
+.circuit-line{stroke-dasharray:6 6;animation:dashMove 2.5s linear infinite;}
+@keyframes dashMove{to{stroke-dashoffset:-24}}
+.stat-card{position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(91,157,255,.6),transparent);}
+.kbd{border:1px solid rgba(255,255,255,.12);border-bottom-width:2px;border-radius:6px;padding:1px 7px;font-size:11px;background:rgba(255,255,255,.04);}
+input,textarea{outline:none;}
+.contact-input{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:.3s;width:100%;}
+.contact-input:focus{border-color:rgba(43,111,255,.6);background:rgba(43,111,255,.04);box-shadow:0 0 0 3px rgba(43,111,255,.12);}
+#cvSheet{width:820px;max-width:100%;background:#fff;color:#1a1d22;font-family:'Inter',sans-serif;}
+@media print{body *{visibility:hidden}#cvSheet,#cvSheet *{visibility:visible}#cvSheet{position:absolute;left:0;top:0;width:100%}}
+</style>
+</head>
+<body class="antialiased noise">
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="loader-logo">DZ</div>
+  <div class="text-sm tracking-[0.3em] uppercase text-white/50 font-display">Initializing Portfolio</div>
+  <div class="loader-bar"><span></span></div>
+  <div class="mono text-[11px] text-white/30">v2.0 — danish.portfolio / system boot</div>
+</div>
+
+<div id="progress"></div>
+<div id="cursorDot"></div><div id="cursorRing"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/45 border-b border-white/5">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3 font-display font-semibold tracking-tight group">
+      <span class="w-9 h-9 rounded-xl glow-btn grid place-items-center text-white text-sm font-bold group-hover:rotate-6 transition-transform">DZ</span>
+      <span class="leading-none"><span class="block text-[15px]">Danish<span class="text-[var(--accent-2)]">.</span></span><span class="mono block text-[9px] tracking-[0.28em] text-white/40 font-normal mt-[3px]">PORTFOLIO — 2025</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-[13.5px] text-[var(--muted)] font-medium">
+      <li><a href="#home" data-nav="home" class="nav-link hover:text-white transition">Home</a></li>
+      <li><a href="#about" data-nav="about" class="nav-link hover:text-white transition">About</a></li>
+      <li><a href="#skills" data-nav="skills" class="nav-link hover:text-white transition">Skills</a></li>
+      <li><a href="#portfolio" data-nav="portfolio" class="nav-link hover:text-white transition">Portfolio</a></li>
+      <li><a href="#cv" data-nav="cv" class="nav-link hover:text-white transition">CV</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <span class="hidden lg:inline-flex hud items-center gap-2 mr-1"><span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span> OPEN TO WORK</span>
+      <button onclick="downloadCV()" class="glow-btn btn-shine text-white text-[13px] font-semibold px-4 py-2.5 rounded-xl transition hidden sm:inline-flex items-center gap-2"><i class="fa-solid fa-download text-xs"></i> Download CV</button>
+      <a href="#cv" class="ghost-btn text-white text-[13px] font-medium px-4 py-2.5 rounded-xl hidden sm:inline-flex">Contact</a>
+      <button id="menuBtn" class="md:hidden text-white text-lg w-10 h-10 grid place-items-center rounded-xl border border-white/10 bg-white/5"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-black/90 backdrop-blur-2xl">
+    <ul class="px-6 py-4 flex flex-col text-[var(--muted)] text-sm font-medium">
+      <li><a href="#home" class="block py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">01 — Home</a></li>
+      <li><a href="#about" class="block py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">02 — About</a></li>
+      <li><a href="#skills" class="block py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">03 — Skills</a></li>
+      <li><a href="#portfolio" class="block py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">04 — Portfolio</a></li>
+      <li><a href="#cv" class="block py-3 hover:text-white hover:pl-2 transition-all">05 — CV & Contact</a></li>
+      <li class="pt-3 pb-1"><button onclick="downloadCV()" class="glow-btn w-full text-white text-sm font-semibold px-4 py-3 rounded-xl"><i class="fa-solid fa-download mr-2"></i>Download CV (PDF)</button></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="relative min-h-screen flex items-center pt-32 pb-20 grain overflow-hidden">
+  <canvas id="networkCanvas"></canvas>
+  <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
+  <div class="blob w-[520px] h-[520px] -top-40 -left-24" style="background:#2b6fff;opacity:.22"></div>
+  <div class="blob w-[420px] h-[420px] bottom-0 right-0" style="background:#0a2a66;opacity:.55"></div>
+  <!-- circuit deco -->
+  <svg class="absolute top-24 right-10 w-[320px] opacity-20 hidden lg:block" viewBox="0 0 300 200" fill="none"><path class="circuit-line" d="M0 20 H80 V60 H160 V110 H300 M0 150 H60 V100 H120 V40 H220" stroke="#5b9dff" stroke-width="1"/><circle cx="80" cy="60" r="3" fill="#5b9dff"/><circle cx="160" cy="110" r="3" fill="#2b6fff"/><circle cx="120" cy="100" r="3" fill="#5b9dff"/></svg>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 reveal">
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <div class="section-tag"><span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span> Available for Collaboration</div>
+          <div class="hud hidden sm:block">SEMARANG / ID — 110.42°E, 6.97°S</div>
+        </div>
+        <p class="mono text-[12px] tracking-[0.25em] text-[var(--accent-2)] mb-4">// HELLO, I AM</p>
+        <h1 class="font-display text-[44px] sm:text-6xl lg:text-[76px] leading-[0.98] tracking-tight font-bold">Danish Zaidan<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Dzaki Naufaliffat</span></h1>
+        <div class="mt-5 font-display text-xl sm:text-2xl flex items-center gap-2 flex-wrap">
+          <span class="text-white/40 text-base mono">></span>
+          <span id="typed" class="text-[var(--accent-2)] font-medium"></span><span class="typing-caret"></span>
+        </div>
+        <p class="mt-5 text-[15.5px] sm:text-[17px] text-[var(--muted)] max-w-xl leading-relaxed">Saya merupakan seseorang yang tertarik dengan <span class="text-white">design web, poster, dan gambar-gambar</span>. Saya juga seseorang yang menyukai <span class="text-white">hal-hal yang menantang</span> — dan mengubah ide menjadi antarmuka yang clean & fungsional.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#portfolio" class="glow-btn btn-shine text-white text-sm font-semibold px-7 py-4 rounded-xl transition flex items-center gap-2 magnetic">Lihat Karya <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <button onclick="openCVPreview()" class="ghost-btn text-white text-sm font-semibold px-7 py-4 rounded-xl flex items-center gap-2 magnetic"><i class="fa-regular fa-file-lines text-[var(--accent-2)]"></i> Preview CV</button>
+          <button onclick="downloadCV()" class="text-sm text-[var(--muted)] hover:text-white transition underline underline-offset-8 decoration-white/20 hover:decoration-[var(--accent-2)]"><i class="fa-solid fa-cloud-arrow-down mr-1"></i> Download PDF</button>
+        </div>
+        <div class="mt-10 flex items-center gap-4">
+          <div class="flex gap-2.5">
+            <a href="https://wa.me/6281392310525" target="_blank" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center text-white/60 hover:text-white hover:bg-[var(--accent)]/20 hover:border-[var(--accent)]/40 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:081392310525" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center text-white/60 hover:text-white hover:bg-[var(--accent)]/20 hover:border-[var(--accent)]/40 transition" title="Telepon"><i class="fa-solid fa-phone text-xs"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center text-white/60 hover:text-white hover:bg-[var(--accent)]/20 hover:border-[var(--accent)]/40 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <button onclick="copyPhone()" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center text-white/60 hover:text-white hover:bg-[var(--accent)]/20 transition" title="Copy nomor"><i class="fa-regular fa-copy text-xs"></i></button>
+          </div>
+          <div class="h-8 w-px bg-white/10"></div>
+          <p class="mono text-[11px] text-white/35 leading-tight">PRESS <span class="kbd">D</span> TO<br/>DOWNLOAD CV</p>
+        </div>
+        <div class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+          <div class="card stat-card p-4 text-center"><div class="stat-num text-3xl font-bold text-white"><span class="counter" data-target="3">0</span></div><div class="text-[11px] text-[var(--muted)] mt-1 uppercase tracking-widest">Projects</div></div>
+          <div class="card stat-card p-4 text-center"><div class="stat-num text-3xl font-bold text-white"><span class="counter" data-target="6">0</span>+</div><div class="text-[11px] text-[var(--muted)] mt-1 uppercase tracking-widest">Skills</div></div>
+          <div class="card stat-card p-4 text-center"><div class="stat-num text-3xl font-bold text-white"><span class="counter" data-target="5">0</span></div><div class="text-[11px] text-[var(--muted)] mt-1 uppercase tracking-widest">Awards & Orgs</div></div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 flex justify-center lg:justify-end reveal reveal-delay-2">
+        <div class="relative float tilt" id="heroTilt">
+          <div class="photo-ring"></div><div class="photo-ring2"></div>
+          <div class="deco-ring absolute -top-10 -right-8 w-24 h-24 float" style="animation-delay:-2s"></div>
+          <div class="deco-ring absolute -bottom-8 -left-8 w-16 h-16 float" style="animation-delay:-4s"></div>
+          <!-- HUD top -->
+          <div class="absolute -top-7 left-2 right-2 z-20 flex justify-between hud"><span>SYS.CAM — 01</span><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>REC</span></div>
+          <img src="https://i.imgur.com/NPYejC9.jpeg" alt="Danish Zaidan" class="hero-photo w-72 sm:w-80 lg:w-[380px] h-[460px] sm:h-[500px] object-cover relative z-10" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80'" />
+          <div class="absolute inset-0 z-10 rounded-[24px] pointer-events-none" style="background:linear-gradient(180deg,transparent 55%,rgba(5,8,20,.75));border-radius:24px;"></div>
+          <!-- floating badges -->
+          <div class="absolute top-8 -left-6 sm:-left-10 z-20 hud-box px-3.5 py-2.5 flex items-center gap-2.5 float" style="animation-delay:-1s">
+            <span class="w-8 h-8 rounded-lg bg-[#2b6fff]/20 grid place-items-center text-[var(--accent-2)]"><i class="fa-solid fa-network-wired text-sm"></i></span>
+            <span><span class="block text-white text-xs font-semibold font-display">Cisco Packet Tracer</span><span class="block mono text-[10px] text-[var(--accent-2)]">PRO — 90%</span></span>
+          </div>
+          <div class="absolute top-1/2 -right-4 sm:-right-8 z-20 hud-box px-3.5 py-2.5 flex items-center gap-2.5 float" style="animation-delay:-3.5s">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/15 grid place-items-center text-emerald-400"><i class="fa-solid fa-wand-magic-sparkles text-sm"></i></span>
+            <span><span class="block text-white text-xs font-semibold font-display">Visual Design</span><span class="block mono text-[10px] text-emerald-300">CANVA — 90%</span></span>
+          </div>
+          <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20 card px-5 py-3 flex items-center gap-3 whitespace-nowrap !rounded-2xl" style="background:rgba(15,16,20,.9);backdrop-filter:blur(14px);">
+            <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+            <span class="text-xs text-white font-medium">SMK • Sistem Informatika, Jaringan & Aplikasi</span>
+          </div>
+          <!-- side data -->
+          <div class="absolute bottom-20 -left-12 z-20 hidden xl:block hud [writing-mode:vertical-lr] rotate-180 tracking-[0.35em]">NETWORK // DESIGN // CODE — 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 text-[var(--muted)] text-[11px] flex flex-col items-center gap-2 z-10">
+    <span class="tracking-[0.35em] uppercase mono">Scroll to explore</span>
+    <span class="w-[1px] h-8 bg-gradient-to-b from-[var(--accent-2)] to-transparent block"></span>
+  </div>
+</section>
+
+<!-- ===== Marquee ===== -->
+<div class="border-y border-white/5 bg-[var(--bg-2)] py-5 overflow-hidden relative">
+  <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#121316] to-transparent z-10"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#121316] to-transparent z-10"></div>
+  <div class="marquee text-[var(--muted)] font-display text-xl sm:text-2xl whitespace-nowrap font-medium">
+    <div class="flex gap-12 items-center pr-12"><span class="hover:text-white transition">Web Designer</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Networking</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Visual Design</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Creative Edit</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Front-end</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Cisco Packet Tracer</span><span class="text-[var(--accent-2)] text-sm">◆</span></div>
+    <div class="flex gap-12 items-center pr-12" aria-hidden="true"><span class="hover:text-white transition">Web Designer</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Networking</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Visual Design</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Creative Edit</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Front-end</span><span class="text-[var(--accent-2)] text-sm">◆</span><span class="hover:text-white transition">Cisco Packet Tracer</span><span class="text-[var(--accent-2)] text-sm">◆</span></div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-24 lg:py-28 px-6 lg:px-10 relative">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-14 max-w-2xl">
+      <div class="section-tag mb-5"><i class="fa-regular fa-user text-xs"></i> About Me — 01</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight">Mengenal saya<br/><span class="text-white/40">lebih dekat.</span></h2>
+      <p class="text-[var(--muted)] mt-4 text-[16px] leading-relaxed">Cerita singkat tentang latar belakang, perjalanan, dan hal-hal yang membentuk saya sebagai individu yang calm, curious, dan technology-oriented.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-5">
+      <div class="card card-hover p-7 reveal">
+        <div class="icon-box mb-5"><i class="fa-solid fa-house-chimney-user"></i></div>
+        <p class="mono text-[10px] tracking-[0.25em] text-[var(--accent-2)] mb-2">FAMILY BACKGROUND</p>
+        <h3 class="font-display text-xl font-semibold mb-3">Riwayat Keluarga</h3>
+        <p class="text-[var(--muted)] text-sm leading-relaxed">Saya merupakan <span class="text-white">anak tunggal</span>. Ayah dan Ibu saya bekerja sebagai <span class="text-white">karyawan swasta</span> yang selalu mendukung perjalanan dan setiap pilihan saya.</p>
+        <div class="mt-6 pt-5 border-t border-white/5 flex items-center gap-3">
+          <div class="flex -space-x-2"><span class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-800 border-2 border-[#17181c] grid place-items-center text-[10px] font-bold">A</span><span class="w-8 h-8 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 border-2 border-[#17181c] grid place-items-center text-[10px] font-bold">I</span><span class="w-8 h-8 rounded-full bg-gradient-to-br from-[#2b6fff] to-[#0a2a66] border-2 border-[#17181c] grid place-items-center text-[10px] font-bold">DZ</span></div>
+          <span class="text-xs text-[var(--muted)]">Support system utama</span>
+        </div>
+      </div>
+
+      <div class="card card-hover p-7 reveal reveal-delay-1">
+        <div class="icon-box mb-5"><i class="fa-solid fa-graduation-cap"></i></div>
+        <p class="mono text-[10px] tracking-[0.25em] text-[var(--accent-2)] mb-2">EDUCATION PATH</p>
+        <h3 class="font-display text-xl font-semibold mb-4">Riwayat Pendidikan</h3>
+        <div class="timeline">
+          <div class="timeline-item"><p class="text-sm font-semibold text-white">TK Tunas Harapan</p><p class="text-xs text-[var(--muted)] mt-0.5">Usia 4 tahun — Awal perjalanan belajar</p></div>
+          <div class="timeline-item"><p class="text-sm font-semibold text-white">SD Sendangmulyo 04</p><p class="text-xs text-[var(--muted)] mt-0.5">Usia 7 tahun — Fondasi dasar & karakter</p></div>
+          <div class="timeline-item"><p class="text-sm font-semibold text-white">SMP Negeri 9</p><p class="text-xs text-[var(--muted)] mt-0.5">Usia 13 tahun — Aktif organisasi Dewan Galang</p></div>
+          <div class="timeline-item !pb-0"><p class="text-sm font-semibold text-[var(--accent-2)]">SMK — Sistem Informatika, Jaringan & Aplikasi</p><p class="text-xs text-[var(--muted)] mt-0.5">Sekarang — Fokus Web & Network</p></div>
+        </div>
+      </div>
+
+      <div class="card card-hover p-7 reveal reveal-delay-2 flex flex-col">
+        <div class="icon-box mb-5"><i class="fa-solid fa-palette"></i></div>
+        <p class="mono text-[10px] tracking-[0.25em] text-[var(--accent-2)] mb-2">HOBBY & INTEREST</p>
+        <h3 class="font-display text-xl font-semibold mb-3">Hobi & Minat</h3>
+        <p class="text-[var(--muted)] text-sm leading-relaxed mb-4">Saya memiliki hobi yang beragam, dikarenakan saya <span class="text-white">gampang bosan</span>. Hobi saya mulai dari menggambar, bermain game, dan <span class="text-white">touring tipis-tipis</span>.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="chip text-xs px-3.5 py-1.5 text-white flex items-center gap-1.5"><i class="fa-solid fa-pen-nib text-[10px] text-[var(--accent-2)]"></i>Menggambar</span>
+          <span class="chip text-xs px-3.5 py-1.5 text-white flex items-center gap-1.5"><i class="fa-solid fa-gamepad text-[10px] text-[var(--accent-2)]"></i>Gaming</span>
+          <span class="chip text-xs px-3.5 py-1.5 text-white flex items-center gap-1.5"><i class="fa-solid fa-motorcycle text-[10px] text-[var(--accent-2)]"></i>Touring</span>
+          <span class="chip text-xs px-3.5 py-1.5 text-[var(--accent-2)] border-[rgba(43,111,255,.35)] !bg-[rgba(43,111,255,.08)] font-semibold"><i class="fa-solid fa-code text-[10px]"></i>Web Designer</span>
+        </div>
+        <div class="mt-5 rounded-xl overflow-hidden border border-white/5 relative h-[110px] group">
+          <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=600&q=80" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-700" alt="setup" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#17181c] via-transparent"></div>
+          <span class="absolute bottom-2 left-3 mono text-[10px] text-white/70 tracking-widest">MINAT UTAMA — WEB DESIGNER</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-5 mt-5">
+      <div class="card card-hover p-7 reveal relative overflow-hidden">
+        <div class="absolute -right-16 -top-16 w-56 h-56 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(43,111,255,.18),transparent 70%)"></div>
+        <div class="flex items-center gap-3 mb-4"><div class="icon-box"><i class="fa-solid fa-bullseye"></i></div><div><p class="mono text-[10px] tracking-[0.25em] text-[var(--accent-2)]">LIFE GOALS</p><h3 class="font-display text-xl font-semibold">Cita-cita</h3></div></div>
+        <p class="text-[var(--muted)] text-[15px] leading-relaxed">Saya ingin menjadi orang dengan <span class="text-white font-medium">financial freedom</span>, memiliki <span class="text-white font-medium">moge impian</span>, dan <span class="text-white font-medium">hidup tenang di desa</span>.</p>
+        <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3"><i class="fa-solid fa-coins text-yellow-400 mb-2"></i><p class="text-[11px] font-medium">Financial<br/>Freedom</p></div>
+          <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3"><i class="fa-solid fa-motorcycle text-[var(--accent-2)] mb-2"></i><p class="text-[11px] font-medium">Moge<br/>Impian</p></div>
+          <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3"><i class="fa-solid fa-house-chimney text-emerald-400 mb-2"></i><p class="text-[11px] font-medium">Tenang<br/>di Desa</p></div>
+        </div>
+      </div>
+      <div class="card card-hover p-7 reveal reveal-delay-1">
+        <div class="flex items-center gap-3 mb-5"><div class="icon-box"><i class="fa-solid fa-layer-group"></i></div><div><p class="mono text-[10px] tracking-[0.25em] text-[var(--accent-2)]">STRENGTHS</p><h3 class="font-display text-xl font-semibold">Kelebihan Diri</h3></div></div>
+        <div class="space-y-5">
+          <div class="flex gap-4"><span class="mt-1 w-8 h-8 shrink-0 rounded-lg bg-emerald-500/10 text-emerald-400 grid place-items-center text-sm border border-emerald-500/20"><i class="fa-solid fa-user-check"></i></span><div><p class="text-[11px] uppercase tracking-[0.2em] text-[var(--accent-2)] mb-1 font-semibold">Soft Skill</p><p class="text-[var(--muted)] text-sm leading-relaxed">Dapat <span class="text-white">beradaptasi dengan sekitar dengan cukup cepat</span> dan memotivasi diri sendiri untuk tetap konsisten.</p></div></div>
+          <div class="h-px bg-white/5"></div>
+          <div class="flex gap-4"><span class="mt-1 w-8 h-8 shrink-0 rounded-lg bg-blue-500/10 text-[var(--accent-2)] grid place-items-center text-sm border border-blue-500/20"><i class="fa-solid fa-wand-magic-sparkles"></i></span><div><p class="text-[11px] uppercase tracking-[0.2em] text-[var(--accent-2)] mb-1 font-semibold">Hard Skill</p><p class="text-[var(--muted)] text-sm leading-relaxed">Bisa <span class="text-white">mendesain simple di Canva</span> dan juga bisa <span class="text-white">sedikit editing</span> untuk kebutuhan konten visual.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="py-24 lg:py-28 px-6 lg:px-10 relative bg-[var(--bg-2)] border-y border-white/5 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+  <div class="blob w-[400px] h-[400px] top-0 right-0" style="background:#1a3a8a;opacity:.25"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+      <div class="max-w-2xl">
+        <div class="section-tag mb-5"><i class="fa-solid fa-chart-simple text-xs"></i> Skills — 02</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight">Keahlian &<br/><span class="text-white/40">Kompetensi.</span></h2>
+        <p class="text-[var(--muted)] mt-4">Kombinasi kemampuan teknis networking, design, dan dasar pengembangan web. <span class="text-white/70">Klik kartu untuk highlight skill.</span></p>
+      </div>
+      <div class="hud-box px-4 py-3 flex items-center gap-4 shrink-0">
+        <div class="text-center"><p class="font-display font-bold text-xl text-white" id="avgSkill">0%</p><p class="mono text-[9px] text-white/40 tracking-widest">AVG. SCORE</p></div>
+        <div class="w-px h-10 bg-white/10"></div>
+        <div class="text-center"><p class="font-display font-bold text-xl text-[var(--accent-2)]">6</p><p class="mono text-[9px] text-white/40 tracking-widest">STACKS</p></div>
+        <div class="w-px h-10 bg-white/10"></div>
+        <div class="flex gap-1 items-end h-8"><span class="w-1.5 bg-[var(--accent)] rounded-full animate-pulse" style="height:40%"></span><span class="w-1.5 bg-[var(--accent)] rounded-full animate-pulse" style="height:70%;animation-delay:.2s"></span><span class="w-1.5 bg-[var(--accent-2)] rounded-full animate-pulse" style="height:100%;animation-delay:.4s"></span><span class="w-1.5 bg-[var(--accent-2)] rounded-full animate-pulse" style="height:60%;animation-delay:.6s"></span></div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-x-14 gap-y-7 mb-4">
+      <div class="reveal skill-item" data-percent="30" data-name="HTML"><div class="flex items-center justify-between mb-2.5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-orange-500/10 text-orange-400 grid place-items-center border border-orange-500/20"><i class="fa-brands fa-html5"></i></span><span class="font-medium text-[15px]">HTML <span class="mono text-[10px] text-white/30 ml-1">STRUCTURE</span></span></div><span class="text-sm text-[var(--muted)] percent-label font-display font-semibold">0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="reveal reveal-delay-1 skill-item" data-percent="40" data-name="CSS"><div class="flex items-center justify-between mb-2.5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-400 grid place-items-center border border-blue-500/20"><i class="fa-brands fa-css3-alt"></i></span><span class="font-medium text-[15px]">CSS <span class="mono text-[10px] text-white/30 ml-1">STYLING</span></span></div><span class="text-sm text-[var(--muted)] percent-label font-display font-semibold">0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="reveal skill-item" data-percent="30" data-name="JavaScript"><div class="flex items-center justify-between mb-2.5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-yellow-500/10 text-yellow-400 grid place-items-center border border-yellow-500/20"><i class="fa-brands fa-js"></i></span><span class="font-medium text-[15px]">JavaScript <span class="mono text-[10px] text-white/30 ml-1">LOGIC</span></span></div><span class="text-sm text-[var(--muted)] percent-label font-display font-semibold">0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="reveal reveal-delay-1 skill-item" data-percent="90" data-name="Cisco"><div class="flex items-center justify-between mb-2.5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-[var(--accent)]/15 text-[var(--accent-2)] grid place-items-center border border-[var(--accent)]/25"><i class="fa-solid fa-network-wired"></i></span><span class="font-medium text-[15px]">Cisco Packet Tracer <span class="mono text-[10px] text-[var(--accent-2)] ml-1 border border-[var(--accent)]/30 px-1.5 py-0.5 rounded-full">EXPERT</span></span></div><span class="text-sm text-[var(--muted)] percent-label font-display font-semibold">0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="reveal skill-item" data-percent="90" data-name="Editing"><div class="flex items-center justify-between mb-2.5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-300 grid place-items-center border border-purple-500/20"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="font-medium text-[15px]">Editing (Canva, dll) <span class="mono text-[10px] text-purple-300 ml-1 border border-purple-500/30 px-1.5 py-0.5 rounded-full">EXPERT</span></span></div><span class="text-sm text-[var(--muted)] percent-label font-display font-semibold">0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+      <div class="reveal reveal-delay-1 skill-item" data-percent="50" data-name="Workout"><div class="flex items-center justify-between mb-2.5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 grid place-items-center border border-emerald-500/20"><i class="fa-solid fa-dumbbell"></i></span><span class="font-medium text-[15px]">Workout & Discipline <span class="mono text-[10px] text-white/30 ml-1">LIFESTYLE</span></span></div><span class="text-sm text-[var(--muted)] percent-label font-display font-semibold">0%</span></div><div class="bar-track"><div class="bar-fill"></div></div></div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10" id="skillCards">
+      <div class="card card-hover skill-card p-5 reveal" data-goto="HTML"><div class="flex items-center justify-between mb-3"><span class="font-medium text-sm flex items-center gap-2"><i class="fa-brands fa-html5 text-orange-400"></i>HTML</span><span class="text-[var(--accent-2)] text-xs font-bold font-display">30%</span></div><p class="text-[var(--muted)] text-xs leading-relaxed">Memahami dasar struktur website: heading, paragraf, tabel, form, gambar, dan hyperlink. Mampu membuat tampilan web sederhana.</p></div>
+      <div class="card card-hover skill-card p-5 reveal reveal-delay-1" data-goto="CSS"><div class="flex items-center justify-between mb-3"><span class="font-medium text-sm flex items-center gap-2"><i class="fa-brands fa-css3-alt text-blue-400"></i>CSS</span><span class="text-[var(--accent-2)] text-xs font-bold font-display">40%</span></div><p class="text-[var(--muted)] text-xs leading-relaxed">Mengatur warna, font, layout, spacing, dan responsive design sederhana. Memahami Flexbox dasar serta styling antarmuka.</p></div>
+      <div class="card card-hover skill-card p-5 reveal reveal-delay-2" data-goto="JavaScript"><div class="flex items-center justify-between mb-3"><span class="font-medium text-sm flex items-center gap-2"><i class="fa-brands fa-js text-yellow-400"></i>JavaScript</span><span class="text-[var(--accent-2)] text-xs font-bold font-display">30%</span></div><p class="text-[var(--muted)] text-xs leading-relaxed">Dasar interaksi: manipulasi tombol, alert, input pengguna, logika dasar. Sedang mengembangkan DOM & event handling.</p></div>
+      <div class="card card-hover skill-card p-5 reveal" data-goto="Cisco"><div class="flex items-center justify-between mb-3"><span class="font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-network-wired text-[var(--accent-2)]"></i>Cisco Packet Tracer</span><span class="text-[var(--accent-2)] text-xs font-bold font-display">90%</span></div><p class="text-[var(--muted)] text-xs leading-relaxed">Topologi jaringan, konfigurasi router & switch, IP, subnetting, VLAN, routing dasar, dan troubleshooting jaringan.</p></div>
+      <div class="card card-hover skill-card p-5 reveal reveal-delay-1" data-goto="Editing"><div class="flex items-center justify-between mb-3"><span class="font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-purple-300"></i>Editing & Canva</span><span class="text-[var(--accent-2)] text-xs font-bold font-display">90%</span></div><p class="text-[var(--muted)] text-xs leading-relaxed">Editing video & foto untuk media sosial, poster, feed IG, banner, dan desain visual profesional yang clean.</p></div>
+      <div class="card card-hover skill-card p-5 reveal reveal-delay-2" data-goto="Workout"><div class="flex items-center justify-between mb-3"><span class="font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-dumbbell text-emerald-400"></i>Workout</span><span class="text-[var(--accent-2)] text-xs font-bold font-display">50%</span></div><p class="text-[var(--muted)] text-xs leading-relaxed">Konsistensi latihan kebugaran: latihan otot, cardio, dan pola rutin untuk kesehatan dan disiplin diri.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section id="portfolio" class="py-24 lg:py-28 px-6 lg:px-10 relative overflow-hidden">
+  <div class="blob w-[500px] h-[300px] top-20 left-1/2 -translate-x-1/2" style="background:#1a3a8a;opacity:.18"></div>
+  <div class="max-w-7xl mx-auto relative">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+      <div class="max-w-2xl">
+        <div class="section-tag mb-5"><i class="fa-regular fa-folder-open text-xs"></i> Portfolio — 03</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight">Karya &<br/><span class="text-white/40">Proyek pilihan.</span></h2>
+        <p class="text-[var(--muted)] mt-4">Beberapa proyek yang pernah saya kerjakan selama menempuh pendidikan. Klik untuk melihat detail & live preview.</p>
+      </div>
+      <div class="flex gap-2">
+        <button class="filterBtn ghost-btn text-xs px-4 py-2.5 rounded-full text-white font-medium !bg-[rgba(43,111,255,.12)] !border-[rgba(43,111,255,.4)]" data-filter="all">All</button>
+        <button class="filterBtn ghost-btn text-xs px-4 py-2.5 rounded-full text-[var(--muted)] font-medium" data-filter="design">Design</button>
+        <button class="filterBtn ghost-btn text-xs px-4 py-2.5 rounded-full text-[var(--muted)] font-medium" data-filter="web">Web</button>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6" id="portfolioGrid">
+      <article class="card card-hover p-6 group reveal portfolio-item" data-cat="design" data-title="Desain Mug" data-img="https://i.imgur.com/o0u8kE0.jpeg" data-desc="Jadi saat itu ada tugas dari jurusan untuk mendesain sebuah mug dan saya mendapatkan ide untuk mendesain mug itu dengan karakter game favorit saya." data-link="https://canva.link/q1heu93cq4qwb3d" data-tags="Design,Canva,Merchandise">
+        <div class="img-wrap mb-6 h-64">
+          <img src="https://i.imgur.com/o0u8kE0.jpeg" alt="Desain Mug" class="project-img w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80'" />
+          <button onclick="openProject(this.closest('.portfolio-item'))" class="absolute bottom-4 right-4 z-10 glow-btn text-white text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all"><i class="fa-solid fa-expand"></i> Quick View</button>
+          <span class="absolute top-4 left-4 z-10 mono text-[10px] tracking-widest bg-black/60 backdrop-blur px-2.5 py-1.5 rounded-lg border border-white/10 text-white/80">PRJ — 001</span>
+        </div>
+        <div class="flex items-center gap-2 mb-3"><span class="chip text-[11px] px-3 py-1 text-[var(--accent-2)] font-semibold">Design</span><span class="chip text-[11px] px-3 py-1 text-[var(--muted)]">Canva</span><span class="chip text-[11px] px-3 py-1 text-[var(--muted)]">Merchandise</span></div>
+        <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-[var(--accent-2)] transition">Desain Mug</h3>
+        <p class="text-[var(--muted)] text-sm leading-relaxed mb-5">Tugas dari jurusan untuk mendesain sebuah mug. Saya mendapat ide untuk mendesain mug itu dengan karakter game favorit saya.</p>
+        <div class="flex items-center justify-between">
+          <button onclick="openProject(this.closest('.portfolio-item'))" class="inline-flex items-center gap-2 text-sm text-white border-b border-[var(--accent-2)]/40 hover:border-[var(--accent-2)] hover:gap-3 transition-all pb-1 font-medium">Lihat Detail <i class="fa-solid fa-arrow-right text-xs"></i></button>
+          <a href="https://canva.link/q1heu93cq4qwb3d" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center hover:bg-[var(--accent)] hover:border-[var(--accent)] transition text-sm"><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+        </div>
+      </article>
+
+      <article class="card card-hover p-6 group reveal reveal-delay-1 portfolio-item" data-cat="web" data-title="Website Kelompok" data-img="https://i.imgur.com/H7KLTZm.png" data-desc="Ini juga merupakan tugas website dari jurusan — saya dan teman saya membuat website ini dengan tema Fotografi dan Videografi." data-link="https://cisc.gamer.gd" data-tags="Web,Fotografi,Videografi">
+        <div class="img-wrap mb-6 h-64">
+          <img src="https://i.imgur.com/H7KLTZm.png" alt="Website Kelompok" class="project-img w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80'" />
+          <button onclick="openProject(this.closest('.portfolio-item'))" class="absolute bottom-4 right-4 z-10 glow-btn text-white text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all"><i class="fa-solid fa-expand"></i> Quick View</button>
+          <span class="absolute top-4 left-4 z-10 mono text-[10px] tracking-widest bg-black/60 backdrop-blur px-2.5 py-1.5 rounded-lg border border-white/10 text-white/80">PRJ — 002</span>
+          <span class="absolute top-4 right-4 z-10 mono text-[10px] tracking-widest bg-green-500/20 backdrop-blur px-2.5 py-1.5 rounded-lg border border-green-500/30 text-green-300 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span>LIVE</span>
+        </div>
+        <div class="flex items-center gap-2 mb-3 flex-wrap"><span class="chip text-[11px] px-3 py-1 text-[var(--accent-2)] font-semibold">Web</span><span class="chip text-[11px] px-3 py-1 text-[var(--muted)]">Fotografi</span><span class="chip text-[11px] px-3 py-1 text-[var(--muted)]">Videografi</span></div>
+        <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-[var(--accent-2)] transition">Website Kelompok</h3>
+        <p class="text-[var(--muted)] text-sm leading-relaxed mb-5">Tugas website dari jurusan — dibuat bersama teman saya dengan tema Fotografi dan Videografi.</p>
+        <div class="flex items-center justify-between">
+          <button onclick="openProject(this.closest('.portfolio-item'))" class="inline-flex items-center gap-2 text-sm text-white border-b border-[var(--accent-2)]/40 hover:border-[var(--accent-2)] hover:gap-3 transition-all pb-1 font-medium">Lihat Detail <i class="fa-solid fa-arrow-right text-xs"></i></button>
+          <a href="https://cisc.gamer.gd" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center hover:bg-[var(--accent)] hover:border-[var(--accent)] transition text-sm"><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-6 card p-6 reveal border-dashed !border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 !bg-transparent">
+      <div class="flex items-center gap-4"><span class="w-12 h-12 rounded-2xl border border-dashed border-[var(--accent-2)]/40 grid place-items-center text-[var(--accent-2)]"><i class="fa-solid fa-plus"></i></span><div><p class="font-display font-semibold">More projects in progress</p><p class="text-xs text-[var(--muted)]">Sedang mengerjakan eksplorasi front-end & topologi jaringan baru.</p></div></div>
+      <a href="https://wa.me/6281392310525?text=Halo%20Danish,%20saya%20tertarik%20kolaborasi!" target="_blank" class="ghost-btn text-sm px-5 py-3 rounded-xl font-medium whitespace-nowrap">Ajak Kolaborasi <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CV ===== -->
+<section id="cv" class="py-24 lg:py-28 px-6 lg:px-10 relative bg-[var(--bg-2)] border-y border-white/5 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
+  <div class="blob w-[460px] h-[460px] -left-32 bottom-0" style="background:#0f2c6b;opacity:.35"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+      <div class="max-w-2xl">
+        <div class="section-tag mb-5"><i class="fa-regular fa-file-lines text-xs"></i> Curriculum Vitae — 04</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight">Profil<br/><span class="text-white/40">Profesional.</span></h2>
+        <p class="text-[var(--muted)] mt-4">Ringkasan data pribadi, pendidikan, pengalaman, dan keahlian. Tersedia dalam format PDF siap unduh & cetak.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="downloadCV()" id="dlBtn1" class="glow-btn btn-shine text-white text-sm font-semibold px-6 py-3.5 rounded-xl flex items-center gap-2"><i class="fa-solid fa-file-arrow-down"></i> <span>Download CV (PDF)</span></button>
+        <button onclick="openCVPreview()" class="ghost-btn text-white text-sm font-semibold px-6 py-3.5 rounded-xl flex items-center gap-2"><i class="fa-solid fa-eye text-[var(--accent-2)]"></i> Preview</button>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-1 space-y-5">
+        <div class="card card-hover p-7 reveal text-center relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-[90px] pointer-events-none" style="background:linear-gradient(180deg,rgba(43,111,255,.18),transparent)"></div>
+          <div class="relative w-40 h-40 mx-auto mb-5">
+            <div class="absolute -inset-2 rounded-full border border-[var(--accent)]/30"></div>
+            <div class="absolute -inset-2 rounded-full border-t border-[var(--accent-2)]/70 animate-spin" style="animation-duration:6s"></div>
+            <img src="https://i.imgur.com/1bc4zGf.jpeg" alt="Foto Profesional" class="w-full h-full rounded-full object-cover border-4 border-[#1c1e23] relative" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'" />
+            <span class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-green-500 border-4 border-[#17181c] grid place-items-center"><i class="fa-solid fa-check text-[9px] text-white"></i></span>
+          </div>
+          <h3 class="font-display text-xl font-semibold">Danish Zaidan Dzaki N</h3>
+          <p class="text-[var(--accent-2)] text-[13px] mt-1 font-medium">Web Designer & Network Enthusiast</p>
+          <div class="flex justify-center gap-2 mt-3"><span class="mono text-[10px] px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-300 tracking-widest">● AVAILABLE</span><span class="mono text-[10px] px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 tracking-widest">SMK / SIJA</span></div>
+          <div class="h-px bg-white/5 my-5"></div>
+          <ul class="space-y-3 text-left text-sm">
+            <li class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.03] transition"><span class="w-9 h-9 rounded-lg bg-[var(--accent)]/10 grid place-items-center text-[var(--accent-2)] shrink-0"><i class="fa-solid fa-phone text-xs"></i></span><div class="flex-1"><p class="text-[11px] text-[var(--muted)] uppercase tracking-wider">Telepon / WA</p><p class="text-white font-medium">081392310525</p></div><button onclick="copyPhone()" class="text-white/30 hover:text-white transition text-xs"><i class="fa-regular fa-copy"></i></button></li>
+            <li class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.03] transition"><span class="w-9 h-9 rounded-lg bg-[var(--accent)]/10 grid place-items-center text-[var(--accent-2)] shrink-0"><i class="fa-solid fa-location-dot text-xs"></i></span><div><p class="text-[11px] text-[var(--muted)] uppercase tracking-wider">Domisili</p><p class="text-white font-medium">Semarang, Jawa Tengah</p></div></li>
+            <li class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.03] transition"><span class="w-9 h-9 rounded-lg bg-[var(--accent)]/10 grid place-items-center text-[var(--accent-2)] shrink-0"><i class="fa-solid fa-briefcase text-xs"></i></span><div><p class="text-[11px] text-[var(--muted)] uppercase tracking-wider">Status</p><p class="text-white font-medium">Pelajar SMK — SIJA</p></div></li>
+          </ul>
+          <div class="h-px bg-white/5 my-5"></div>
+          <div class="grid grid-cols-3 gap-2">
+            <a href="tel:081392310525" class="h-10 rounded-xl border border-white/10 grid place-items-center hover:bg-[var(--accent)]/20 hover:border-[var(--accent)]/40 transition text-sm" title="Call"><i class="fa-solid fa-phone text-xs"></i></a>
+            <a href="https://wa.me/6281392310525" target="_blank" class="h-10 rounded-xl bg-[#1a7a4a]/20 border border-green-500/25 grid place-items-center hover:bg-green-600/30 transition text-sm" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="h-10 rounded-xl border border-white/10 grid place-items-center hover:bg-[var(--accent)]/20 transition text-sm" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <button onclick="downloadCV()" class="mt-3 w-full ghost-btn rounded-xl py-3 text-[13px] font-semibold flex items-center justify-center gap-2"><i class="fa-solid fa-print text-[var(--accent-2)]"></i> Cetak / Simpan PDF</button>
+        </div>
+
+        <div class="quote-card card p-7 reveal reveal-delay-1 relative overflow-hidden">
+          <i class="fa-solid fa-quote-left text-3xl text-[var(--accent-2)] mb-4 block"></i>
+          <p class="font-display text-[19px] leading-snug text-white font-medium">"We do what is right, not what is easy."</p>
+          <p class="text-[13px] text-[var(--muted)] mt-4 leading-relaxed border-l-2 border-[var(--accent)]/40 pl-4">Maknanya: jalan yang benar itu sering lebih berat, tapi tetap harus dipilih.</p>
+          <p class="mono text-[10px] text-white/30 mt-4 tracking-[0.25em]">— PERSONAL PRINCIPLE</p>
+        </div>
+
+        <!-- mini contact -->
+        <div class="card p-6 reveal reveal-delay-2">
+          <p class="font-display font-semibold mb-1">Tertarik bekerja sama?</p>
+          <p class="text-xs text-[var(--muted)] mb-4">Respon cepat via WhatsApp — biasanya &lt; 1 jam.</p>
+          <a href="https://wa.me/6281392310525?text=Halo%20Danish!%20Saya%20melihat%20portfolio%20Anda." target="_blank" class="glow-btn w-full rounded-xl py-3 text-sm font-semibold flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp"></i> Chat Sekarang</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 space-y-5">
+        <div class="card card-hover p-7 reveal">
+          <div class="flex items-center gap-3 mb-4"><div class="icon-box !w-10 !h-10"><i class="fa-solid fa-user-graduate"></i></div><div><h3 class="font-display text-lg font-semibold leading-none">Data Pendidikan</h3><p class="mono text-[10px] text-white/35 tracking-widest mt-1">EDUCATION — 01</p></div></div>
+          <p class="text-[var(--muted)] text-sm leading-relaxed">Siswa SMK jurusan <span class="text-white font-medium">Sistem Informatika, Jaringan, dan Aplikasi</span> yang memiliki keterampilan membuat <span class="text-white">website statis</span> serta berbagai soft skill lainnya berupa <span class="text-white">editing dan design</span>.</p>
+          <div class="mt-5 grid sm:grid-cols-4 gap-2.5 text-center">
+            <div class="rounded-xl bg-white/[0.02] border border-white/5 p-3"><p class="text-[11px] font-bold">TK</p><p class="text-[10px] text-[var(--muted)]">Tunas Harapan</p></div>
+            <div class="rounded-xl bg-white/[0.02] border border-white/5 p-3"><p class="text-[11px] font-bold">SD</p><p class="text-[10px] text-[var(--muted)]">Sendangmulyo 04</p></div>
+            <div class="rounded-xl bg-white/[0.02] border border-white/5 p-3"><p class="text-[11px] font-bold">SMP</p><p class="text-[10px] text-[var(--muted)]">Negeri 9</p></div>
+            <div class="rounded-xl bg-[rgba(43,111,255,.08)] border border-[rgba(43,111,255,.25)] p-3"><p class="text-[11px] font-bold text-[var(--accent-2)]">SMK</p><p class="text-[10px] text-[var(--muted)]">SIJA — Aktif</p></div>
+          </div>
+        </div>
+
+        <div class="card card-hover p-7 reveal reveal-delay-1">
+          <div class="flex items-center gap-3 mb-5"><div class="icon-box !w-10 !h-10"><i class="fa-solid fa-trophy"></i></div><div><h3 class="font-display text-lg font-semibold leading-none">Pengalaman Organisasi, Lomba & PKL</h3><p class="mono text-[10px] text-white/35 tracking-widest mt-1">EXPERIENCE — 05 RECORDS</p></div></div>
+          <div class="space-y-2.5">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl hover:bg-white/[0.03] transition border border-transparent hover:border-white/5 group"><span class="w-9 h-9 rounded-lg bg-[var(--accent)]/10 text-[var(--accent-2)] grid place-items-center shrink-0 text-sm group-hover:bg-[var(--accent)] group-hover:text-white transition"><i class="fa-solid fa-users"></i></span><div class="flex-1"><p class="text-sm text-white font-semibold">Wakil Ketua Karang Taruna</p><p class="text-xs text-[var(--muted)]">Aktif dalam kegiatan organisasi lingkungan</p></div><span class="mono text-[10px] text-white/30 border border-white/10 px-2 py-1 rounded-full">ORG</span></div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl hover:bg-white/[0.03] transition border border-transparent hover:border-white/5 group"><span class="w-9 h-9 rounded-lg bg-yellow-500/10 text-yellow-400 grid place-items-center shrink-0 text-sm group-hover:bg-yellow-500 group-hover:text-black transition"><i class="fa-solid fa-medal"></i></span><div class="flex-1"><p class="text-sm text-white font-semibold">Juara Lomba Memanah — Tingkat Kota Semarang</p><p class="text-xs text-[var(--muted)]">Prestasi tingkat kota</p></div><span class="mono text-[10px] text-yellow-300/80 border border-yellow-500/20 px-2 py-1 rounded-full">JUARA</span></div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl hover:bg-white/[0.03] transition border border-transparent hover:border-white/5 group"><span class="w-9 h-9 rounded-lg bg-yellow-500/10 text-yellow-400 grid place-items-center shrink-0 text-sm group-hover:bg-yellow-500 group-hover:text-black transition"><i class="fa-solid fa-drum"></i></span><div class="flex-1"><p class="text-sm text-white font-semibold">Juara Lomba Rebana — Tingkat Kota Semarang</p><p class="text-xs text-[var(--muted)]">Prestasi tingkat kota</p></div><span class="mono text-[10px] text-yellow-300/80 border border-yellow-500/20 px-2 py-1 rounded-full">JUARA</span></div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl hover:bg-white/[0.03] transition border border-transparent hover:border-white/5 group"><span class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 grid place-items-center shrink-0 text-sm"><i class="fa-solid fa-campground"></i></span><div class="flex-1"><p class="text-sm text-white font-semibold">Organisasi Dewan Galang (SMP)</p><p class="text-xs text-[var(--muted)]">Aktif mengikuti kegiatan kepramukaan</p></div><span class="mono text-[10px] text-white/30 border border-white/10 px-2 py-1 rounded-full">SMP</span></div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl hover:bg-white/[0.03] transition border border-transparent hover:border-white/5 group"><span class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-300 grid place-items-center shrink-0 text-sm"><i class="fa-solid fa-camera"></i></span><div class="flex-1"><p class="text-sm text-white font-semibold">Organisasi Foto & Videografi (SMK)</p><p class="text-xs text-[var(--muted)]">Aktif mengembangkan skill visual & dokumentasi</p></div><span class="mono text-[10px] text-white/30 border border-white/10 px-2 py-1 rounded-full">SMK</span></div>
+          </div>
+        </div>
+
+        <div class="card card-hover p-7 reveal reveal-delay-2">
+          <div class="flex items-center justify-between mb-5 flex-wrap gap-3">
+            <div class="flex items-center gap-3"><div class="icon-box !w-10 !h-10"><i class="fa-solid fa-list-check"></i></div><div><h3 class="font-display text-lg font-semibold leading-none">Data Skills</h3><p class="mono text-[10px] text-white/35 tracking-widest mt-1">6 COMPETENCIES</p></div></div>
+            <button onclick="downloadCV()" class="text-xs text-[var(--accent-2)] hover:text-white transition font-medium"><i class="fa-solid fa-download mr-1"></i> Unduh versi PDF</button>
+          </div>
+          <div class="space-y-5">
+            <div class="cv-skill" data-percent="30"><div class="flex items-center justify-between mb-1.5"><span class="text-sm font-medium text-white">HTML</span><span class="text-xs text-[var(--accent-2)] cv-percent font-display font-bold">0%</span></div><div class="bar-track mb-2"><div class="bar-fill"></div></div><p class="text-xs text-[var(--muted)] leading-relaxed">Memahami dasar pembuatan struktur website menggunakan HTML seperti heading, paragraf, tabel, form, gambar, dan hyperlink.</p></div>
+            <div class="cv-skill" data-percent="40"><div class="flex items-center justify-between mb-1.5"><span class="text-sm font-medium text-white">CSS</span><span class="text-xs text-[var(--accent-2)] cv-percent font-display font-bold">0%</span></div><div class="bar-track mb-2"><div class="bar-fill"></div></div><p class="text-xs text-[var(--muted)] leading-relaxed">Mampu menggunakan CSS untuk warna, font, layout, spacing, dan responsive design sederhana. Memahami Flexbox dasar.</p></div>
+            <div class="cv-skill" data-percent="30"><div class="flex items-center justify-between mb-1.5"><span class="text-sm font-medium text-white">JavaScript</span><span class="text-xs text-[var(--accent-2)] cv-percent font-display font-bold">0%</span></div><div class="bar-track mb-2"><div class="bar-fill"></div></div><p class="text-xs text-[var(--muted)] leading-relaxed">Memahami dasar JavaScript untuk interaksi sederhana seperti manipulasi tombol, alert, input pengguna, dan logika dasar.</p></div>
+            <div class="cv-skill" data-percent="90"><div class="flex items-center justify-between mb-1.5"><span class="text-sm font-medium text-white">Cisco Packet Tracer</span><span class="text-xs text-[var(--accent-2)] cv-percent font-display font-bold">0%</span></div><div class="bar-track mb-2"><div class="bar-fill"></div></div><p class="text-xs text-[var(--muted)] leading-relaxed">Sangat memahami simulasi jaringan: topologi, konfigurasi router & switch, IP, subnetting, VLAN, routing dasar, troubleshooting.</p></div>
+            <div class="cv-skill" data-percent="90"><div class="flex items-center justify-between mb-1.5"><span class="text-sm font-medium text-white">Editing Video, Foto & Canva</span><span class="text-xs text-[var(--accent-2)] cv-percent font-display font-bold">0%</span></div><div class="bar-track mb-2"><div class="bar-fill"></div></div><p class="text-xs text-[var(--muted)] leading-relaxed">Berpengalaman editing video & foto untuk media sosial, presentasi, dan desain kreatif. Menguasai Canva untuk poster, feed, banner.</p></div>
+            <div class="cv-skill" data-percent="50"><div class="flex items-center justify-between mb-1.5"><span class="text-sm font-medium text-white">Workout</span><span class="text-xs text-[var(--accent-2)] cv-percent font-display font-bold">0%</span></div><div class="bar-track mb-2"><div class="bar-fill"></div></div><p class="text-xs text-[var(--muted)] leading-relaxed">Konsistensi dalam workout dan pemahaman dasar latihan kebugaran: otot, cardio, pola rutin untuk kesehatan dan disiplin.</p></div>
+          </div>
+        </div>
+
+        <!-- message form -->
+        <div class="card p-7 reveal">
+          <div class="flex items-center gap-3 mb-5"><div class="icon-box !w-10 !h-10"><i class="fa-regular fa-paper-plane"></i></div><h3 class="font-display text-lg font-semibold">Kirim Pesan Cepat</h3></div>
+          <div class="grid sm:grid-cols-2 gap-3 mb-3">
+            <input id="msgName" class="contact-input px-4 py-3 text-sm" placeholder="Nama Anda" />
+            <input id="msgNeed" class="contact-input px-4 py-3 text-sm" placeholder="Keperluan (mis. Kolaborasi Web)" />
+          </div>
+          <textarea id="msgText" rows="3" class="contact-input px-4 py-3 text-sm" placeholder="Tulis pesan Anda..."></textarea>
+          <button onclick="sendWA()" class="mt-3 glow-btn w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="pt-16 pb-8 px-6 lg:px-10 border-t border-white/5 relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto relative">
+    <div class="card p-8 mb-10 flex flex-col lg:flex-row items-center justify-between gap-6 !rounded-2xl relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(circle at 90% 20%,rgba(43,111,255,.15),transparent 55%)"></div>
+      <div class="text-center lg:text-left relative"><h3 class="font-display text-2xl sm:text-3xl font-semibold">Punya proyek atau ide menarik?</h3><p class="text-[var(--muted)] text-sm mt-2">Mari diskusikan — saya terbuka untuk kolaborasi design & web.</p></div>
+      <div class="flex gap-3 relative"><a href="https://wa.me/6281392310525" target="_blank" class="glow-btn px-6 py-3.5 rounded-xl text-sm font-semibold">Hubungi Saya</a><button onclick="downloadCV()" class="ghost-btn px-6 py-3.5 rounded-xl text-sm font-semibold">Download CV</button></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div><div class="flex items-center gap-2.5 font-display font-semibold text-lg mb-3"><span class="w-9 h-9 rounded-xl glow-btn grid place-items-center text-white text-sm font-bold">DZ</span> Danish<span class="text-[var(--accent-2)]">.</span></div><p class="text-[var(--muted)] text-sm max-w-xs leading-relaxed">"We do what is right, not what is easy." — Portfolio profesional seorang IT developer/designer modern.</p><p class="mono text-[10px] text-white/25 mt-3 tracking-widest">BUILD v2.0 — DARK // BLUE // CLEAN</p></div>
+      <div class="md:text-center"><p class="text-[11px] uppercase tracking-[0.25em] text-[var(--muted)] mb-3">Navigasi</p><div class="flex md:justify-center flex-wrap gap-x-5 gap-y-2 text-sm text-[var(--muted)]"><a href="#home" class="hover:text-white transition">Home</a><a href="#about" class="hover:text-white transition">About</a><a href="#skills" class="hover:text-white transition">Skills</a><a href="#portfolio" class="hover:text-white transition">Portfolio</a><a href="#cv" class="hover:text-white transition">CV</a></div></div>
+      <div class="md:text-right"><p class="text-[11px] uppercase tracking-[0.25em] text-[var(--muted)] mb-3">Kontak</p><p class="text-sm text-white">Semarang, Jawa Tengah</p><button onclick="copyPhone()" class="text-sm text-[var(--accent-2)] hover:text-white transition font-medium">081392310525 <i class="fa-regular fa-copy text-xs ml-1"></i></button></div>
+    </div>
+    <div class="h-px bg-white/5 my-7"></div>
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-[var(--muted)]"><p>© 2025 Danish Zaidan Dzaki Naufaliffat. All rights reserved.</p><p>Designed & built with <i class="fa-solid fa-heart text-[var(--accent-2)]"></i> — Interested in Coding.</p></div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backTop" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-xl glow-btn text-white opacity-0 pointer-events-none transition-all duration-300 grid place-items-center" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 z-[80] bg-[#15171c] border border-[rgba(43,111,255,.35)] text-sm text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 max-w-[92vw]"><span class="w-8 h-8 rounded-xl bg-[var(--accent)] grid place-items-center shrink-0"><i class="fa-solid fa-check text-xs"></i></span><span id="toastMsg">Berhasil</span></div>
+
+<!-- PROJECT MODAL -->
+<div id="projectModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 modal-bg">
+  <div class="modal-panel max-w-3xl w-full card !bg-[#121318] overflow-hidden max-h-[92vh] overflow-y-auto">
+    <div class="relative h-64 sm:h-80"><img id="pmImg" src="" class="w-full h-full object-cover" alt="" /><div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 40%,#121318 100%)"></div><button onclick="closeProject()" class="absolute top-4 right-4 w-10 h-10 rounded-xl bg-black/60 backdrop-blur border border-white/10 grid place-items-center hover:bg-[var(--accent)] transition"><i class="fa-solid fa-xmark"></i></button><span class="absolute bottom-4 left-6 flex gap-2" id="pmTags"></span></div>
+    <div class="p-6 sm:p-8"><h3 id="pmTitle" class="font-display text-3xl font-bold mb-3"></h3><p id="pmDesc" class="text-[var(--muted)] text-[15px] leading-relaxed mb-6"></p><div class="grid sm:grid-cols-2 gap-3 mb-6"><div class="rounded-xl border border-white/5 bg-white/[0.02] p-4"><p class="mono text-[10px] tracking-widest text-white/40 mb-1">ROLE</p><p class="text-sm font-medium">Designer & Creator</p></div><div class="rounded-xl border border-white/5 bg-white/[0.02] p-4"><p class="mono text-[10px] tracking-widest text-white/40 mb-1">TAHUN</p><p class="text-sm font-medium">Tugas Jurusan — SMK</p></div></div><div class="flex flex-wrap gap-3"><a id="pmLink" href="#" target="_blank" class="glow-btn px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center gap-2">Buka Karya Asli <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="closeProject()" class="ghost-btn px-6 py-3.5 rounded-xl text-sm font-semibold">Tutup</button></div></div>
+  </div>
+</div>
+
+<!-- CV PREVIEW MODAL -->
+<div id="cvModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 modal-bg">
+  <div class="modal-panel max-w-4xl w-full card !bg-[#0f1114] overflow-hidden max-h-[92vh] flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-white/5 shrink-0">
+      <div><h3 class="font-display font-bold text-lg">Preview CV — Danish Zaidan</h3><p class="text-xs text-[var(--muted)]">Dokumen A4 • Siap download sebagai PDF berkualitas cetak</p></div>
+      <button onclick="closeCVPreview()" class="w-10 h-10 rounded-xl border border-white/10 grid place-items-center hover:bg-[var(--accent)] transition"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="overflow-y-auto p-5 grid place-items-center bg-black/40">
+      <div id="cvPreviewScale" class="w-full max-w-[720px] rounded-xl overflow-hidden border border-white/10 shadow-2xl"></div>
+    </div>
+    <div class="p-5 border-t border-white/5 flex flex-wrap gap-3 shrink-0 bg-[#121318]">
+      <button onclick="downloadCV()" id="dlBtn2" class="glow-btn btn-shine flex-1 min-w-[200px] px-6 py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2"><i class="fa-solid fa-file-arrow-down"></i><span>Download PDF Sekarang</span></button>
+      <button onclick="printCV()" class="ghost-btn px-6 py-3.5 rounded-xl text-sm font-semibold"><i class="fa-solid fa-print mr-1"></i> Print</button>
+      <button onclick="closeCVPreview()" class="ghost-btn px-6 py-3.5 rounded-xl text-sm font-semibold">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<!-- HIDDEN PRINTABLE CV (A4 Light - for PDF export) -->
+<div style="position:fixed;left:-9999px;top:0;z-index:-1;">
+<div id="cvSheet">
+  <div style="display:flex;background:#0f1f4d;color:#fff;padding:36px 36px 28px 36px;align-items:center;gap:24px;">
+    <img id="cvSheetImg" src="https://i.imgur.com/1bc4zGf.jpeg" style="width:118px;height:118px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.25);flex-shrink:0;" crossorigin="anonymous" />
+    <div style="flex:1">
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;line-height:1.1;margin:0;">Danish Zaidan<br/>Dzaki Naufaliffat</h1>
+      <p style="margin:8px 0 12px 0;font-size:13px;letter-spacing:.18em;color:#9cc2ff;font-weight:600;">WEB DESIGNER & NETWORK ENTHUSIAST</p>
+      <div style="display:flex;gap:16px;font-size:12px;color:#d6e2ff;flex-wrap:wrap;">
+        <span>☎ 081392310525</span><span>◉ Semarang, Jawa Tengah</span><span>✦ SMK — SIJA</span>
+      </div>
+    </div>
+    <div style="text-align:right;font-size:11px;line-height:1.7;color:#9cc2ff;">CURRICULUM<br/>VITAE<br/><span style="font-size:22px;color:#fff;font-weight:700;">2025</span></div>
+  </div>
+  <div style="display:flex;">
+    <div style="width:62%;padding:28px 28px 28px 36px;">
+      <h3 style="font-size:12px;letter-spacing:.2em;color:#1d54d6;margin:0 0 10px 0;border-bottom:2px solid #1d54d6;padding-bottom:6px;">TENTANG SAYA</h3>
+      <p style="font-size:12.5px;line-height:1.7;color:#333;margin:0 0 18px 0;">Siswa SMK jurusan <b>Sistem Informatika, Jaringan, dan Aplikasi</b> yang memiliki keterampilan membuat website statis serta berbagai soft skill lainnya berupa editing dan design. Tertarik dengan design web, poster, dan gambar-gambar, serta menyukai hal-hal yang menantang.</p>
+      <h3 style="font-size:12px;letter-spacing:.2em;color:#1d54d6;margin:0 0 10px 0;border-bottom:2px solid #1d54d6;padding-bottom:6px;">PENDIDIKAN</h3>
+      <div style="font-size:12.5px;line-height:1.6;color:#333;margin-bottom:16px;">
+        <p style="margin:0 0 6px 0;"><b>SMK — Sistem Informatika, Jaringan & Aplikasi</b><br/><span style="color:#666;">Sekarang • Fokus Web & Network</span></p>
+        <p style="margin:0 0 6px 0;"><b>SMP Negeri 9</b> <span style="color:#666;">— Usia 13 th</span></p>
+        <p style="margin:0 0 6px 0;"><b>SD Sendangmulyo 04</b> <span style="color:#666;">— Usia 7 th</span></p>
+        <p style="margin:0;"><b>TK Tunas Harapan</b> <span style="color:#666;">— Usia 4 th</span></p>
+      </div>
+      <h3 style="font-size:12px;letter-spacing:.2em;color:#1d54d6;margin:0 0 10px 0;border-bottom:2px solid #1d54d6;padding-bottom:6px;">PENGALAMAN & PRESTASI</h3>
+      <ul style="font-size:12.5px;line-height:1.65;color:#333;margin:0 0 18px 0;padding-left:18px;">
+        <li><b>Wakil Ketua Karang Taruna</b> — Aktif kegiatan organisasi lingkungan</li>
+        <li><b>Juara Lomba Memanah</b> — Tingkat Kota Semarang</li>
+        <li><b>Juara Lomba Rebana</b> — Tingkat Kota Semarang</li>
+        <li><b>Dewan Galang (SMP)</b> — Aktif kepramukaan</li>
+        <li><b>Organisasi Foto & Videografi (SMK)</b> — Skill visual & dokumentasi</li>
+      </ul>
+      <h3 style="font-size:12px;letter-spacing:.2em;color:#1d54d6;margin:0 0 10px 0;border-bottom:2px solid #1d54d6;padding-bottom:6px;">PORTOFOLIO</h3>
+      <div style="font-size:12.5px;color:#333;line-height:1.6;">
+        <p style="margin:0 0 8px 0;"><b>1. Desain Mug</b><br/>Tugas jurusan — desain mug karakter game favorit. <span style="color:#1d54d6;">canva.link/q1heu93cq4qwb3d</span></p>
+        <p style="margin:0;"><b>2. Website Kelompok</b> — Fotografi & Videografi<br/>Tugas website bersama teman. <span style="color:#1d54d6;">cisc.gamer.gd</span></p>
+      </div>
+    </div>
+    <div style="width:38%;background:#f2f4f8;padding:28px 28px 28px 24px;">
+      <h3 style="font-size:12px;letter-spacing:.2em;color:#1d54d6;margin:0 0 12px 0;">DATA PRIBADI</h3>
+      <div style="font-size:12px;color:#333;line-height:1.7;margin-bottom:18px;">
+        <p style="margin:0;"><span style="color:#888;font-size:10px;letter-spacing:.12em;">NAMA</span><br/><b>Danish Zaidan Dzaki N</b></p>
+        <p style="margin:8px 0 0 0;"><span style="color:#888;font-size:10px;letter-spacing:.12em;">TELEPON</span><br/><b>081392310525</b></p>
+        <p style="margin:8px 0 0 0;"><span style="color:#888;font-size:10px;letter-spacing:.12em;">DOMISILI</span><br/><b>Semarang, Jawa Tengah</b></p>
+        <p style="margin:8px 0 0 0;"><span style="color:#888;font-size:10px;letter-spacing:.12em;">KELUARGA</span><br/>Anak tunggal • Orang tua karyawan swasta</p>
+      </div>
+      <h3 style="font-size:12px;letter-spacing:.2em;color:#1d54d6;margin:0 0 12px 0;">SKILLS</h3>
+      <div style="font-size:12px;color:#222;">
+        <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><b>HTML</b><span>30%</span></div><div style="height:7px;background:#dde3ee;border-radius:99px;"><div style="width:30%;height:100%;background:#1d54d6;border-radius:99px;"></div></div></div>
+        <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><b>CSS</b><span>40%</span></div><div style="height:7px;background:#dde3ee;border-radius:99px;"><div style="width:40%;height:100%;background:#1d54d6;border-radius:99px;"></div></div></div>
+        <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><b>JavaScript</b><span>30%</span></div><div style="height:7px;background:#dde3ee;border-radius:99px;"><div style="width:30%;height:100%;background:#1d54d6;border-radius:99px;"></div></div></div>
+        <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><b>Cisco Packet Tracer</b><span>90%</span></div><div style="height:7px;background:#dde3ee;border-radius:99px;"><div style="width:90%;height:100%;background:#1d54d6;border-radius:99px;"></div></div></div>
+        <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><b>Editing / Canva</b><span>90%</span></div><div style="height:7px;background:#dde3ee;border-radius:99px;"><div style="width:90%;height:100%;background:#1d54d6;border-radius:99px;"></div></div></div>
+        <div style="margin-bottom:4px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><b>Workout</b><span>50%</span></div><div style="height:7px;background:#dde3ee;border-radius:99px;"><div style="width:50%;height:100%;background:#1d54d6;border-radius:99px;"></div></div></div>
+      </div>
+      <div style="margin-top:18px;background:#0f1f4d;color:#fff;border-radius:12px;padding:14px;">
+        <p style="margin:0;font-size:12px;font-style:italic;line-height:1.5;">"We do what is right, not what is easy."</p>
+        <p style="margin:8px 0 0 0;font-size:10.5px;color:#9cc2ff;line-height:1.5;">Jalan yang benar itu sering lebih berat, tapi tetap harus dipilih.</p>
+      </div>
+      <p style="font-size:10px;color:#888;margin:14px 0 0 0;">Hobi: Menggambar • Gaming • Touring<br/>Minat: Web Designer • Cita-cita: Financial Freedom, Moge, Tenang di Desa</p>
+    </div>
+  </div>
+  <div style="background:#0f1f4d;color:#9cc2ff;font-size:10.5px;padding:12px 36px;display:flex;justify-content:space-between;letter-spacing:.08em;"><span>DANISH ZAIDAN DZAKI NAUFALIFAT — PORTFOLIO 2025</span><span>INTERESTED IN CODING.</span></div>
+</div>
+</div>
+
+<script>
+// ---------- Preloader ----------
+window.addEventListener('load', ()=> setTimeout(()=> document.getElementById('preloader').classList.add('hide'), 900));
+setTimeout(()=> document.getElementById('preloader').classList.add('hide'), 3500);
+
+// ---------- Progress + Nav + BackTop ----------
+const progress = document.getElementById('progress');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop)/(h.scrollHeight - h.clientHeight)*100;
+  progress.style.width = pct + '%';
+  if(h.scrollTop > 600){ backTop.style.opacity='1'; backTop.style.pointerEvents='auto'; backTop.style.transform='translateY(0)'; }
+  else{ backTop.style.opacity='0'; backTop.style.pointerEvents='none'; backTop.style.transform='translateY(10px)'; }
+  // spy
+  const sections = ['home','about','skills','portfolio','cv'];
+  let cur='home';
+  sections.forEach(id=>{ const el=document.getElementById(id); if(el && window.scrollY >= el.offsetTop - 200) cur=id; });
+  document.querySelectorAll('[data-nav]').forEach(a=> a.classList.toggle('active', a.dataset.nav===cur));
+},{passive:true});
+backTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+// ---------- Mobile ----------
+const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+menuBtn?.addEventListener('click', ()=>{ mobileMenu.classList.toggle('hidden'); menuBtn.innerHTML = mobileMenu.classList.contains('hidden')? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>'; });
+mobileMenu?.querySelectorAll('a,button').forEach(a=> a.addEventListener('click', ()=>{ mobileMenu.classList.add('hidden'); menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>'; }));
+
+// ---------- Cursor ----------
+const dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+(function loop(){ rx+=(mx-rx)*0.16; ry+=(my-ry)*0.16; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(loop); })();
+document.querySelectorAll('a,button,.skill-card').forEach(el=>{
+  el.addEventListener('mouseenter', ()=>{ ring.style.width='52px'; ring.style.height='52px'; ring.style.background='rgba(43,111,255,.12)'; });
+  el.addEventListener('mouseleave', ()=>{ ring.style.width='32px'; ring.style.height='32px'; ring.style.background='transparent'; });
+});
+
+// ---------- Typing ----------
+const words=["Interested in Coding.","Web Designer.","Network Enthusiast.","Visual Creator.","Problem Solver."];
+const typedEl=document.getElementById('typed'); let wi=0, ci=0, del=false;
+(function type(){
+  const w=words[wi];
+  typedEl.textContent = w.slice(0, ci);
+  if(!del){ ci++; if(ci>w.length){ del=true; return setTimeout(type,1400);} }
+  else{ ci--; if(ci===0){ del=false; wi=(wi+1)%words.length; } }
+  setTimeout(type, del? 32 : 62);
+})();
+
+// ---------- Network Canvas (tech theme) ----------
+const canvas=document.getElementById('networkCanvas'), ctx=canvas.getContext('2d');
+let pts=[];
+function resize(){ canvas.width=canvas.offsetWidth; canvas.height=canvas.offsetHeight; initPts(); }
+function initPts(){ const n = Math.min(70, Math.floor(canvas.width/22)); pts=Array.from({length:n},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.6+0.6})); }
+function drawNet(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pts.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>canvas.width)p.vx*=-1; if(p.y<0||p.y>canvas.height)p.vy*=-1; });
+  for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+    const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
+    if(d<150){ ctx.strokeStyle=`rgba(91,157,255,${(1-d/150)*0.22})`; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+  }
+  pts.forEach(p=>{ ctx.fillStyle='rgba(91,157,255,.7)'; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); });
+  requestAnimationFrame(drawNet);
+}
+resize(); window.addEventListener('resize', resize); drawNet();
+
+// ---------- Reveal ----------
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ---------- Counters ----------
+const cObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return; const el=e.target, t=+el.dataset.target; let c=0;
+  const tm=setInterval(()=>{ c+=1; if(c>=t){c=t;clearInterval(tm);} el.textContent=c; },120);
+  cObs.unobserve(el);
+}),{threshold:.6});
+document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
+
+// ---------- Skills ----------
+function animateSkill(el){
+  const pct=parseInt(el.dataset.percent,10);
+  const fill=el.querySelector('.bar-fill');
+  const label=el.querySelector('.percent-label,.cv-percent');
+  requestAnimationFrame(()=> fill.style.width=pct+'%');
+  if(label){ let cur=0; const step=Math.max(1,Math.round(pct/32));
+    const tm=setInterval(()=>{ cur+=step; if(cur>=pct){cur=pct;clearInterval(tm);} label.textContent=cur+'%'; },28);
+  }
+}
+const sObs=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ animateSkill(e.target); sObs.unobserve(e.target); if(e.target.classList.contains('skill-item')) updateAvg(); } }),{threshold:.35});
+document.querySelectorAll('.skill-item,.cv-skill').forEach(el=>sObs.observe(el));
+function updateAvg(){
+  const vals=[30,40,30,90,90,50]; const avg=Math.round(vals.reduce((a,b)=>a+b,0)/vals.length);
+  const el=document.getElementById('avgSkill'); let c=0;
+  const tm=setInterval(()=>{ c+=2; if(c>=avg){c=avg;clearInterval(tm);} el.textContent=c+'%'; },30);
+}
+// skill card highlight
+document.querySelectorAll('.skill-card').forEach(card=>{
+  card.addEventListener('click', ()=>{
+    document.querySelectorAll('.skill-card').forEach(c=>c.classList.remove('selected'));
+    card.classList.add('selected');
+    const name=card.dataset.goto;
+    const target=document.querySelector(`.skill-item[data-name="${name}"]`);
+    if(target){ target.scrollIntoView({behavior:'smooth',block:'center'}); target.style.transition='transform .3s'; target.style.transform='scale(1.02)'; setTimeout(()=>target.style.transform='scale(1)',600); }
+    showToast(name+' — highlighted di skill bar');
+  });
+});
+
+// ---------- Tilt ----------
+const tilt=document.getElementById('heroTilt');
+if(tilt && matchMedia('(hover:hover)').matches){
+  tilt.addEventListener('mousemove', e=>{
+    const r=tilt.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    tilt.style.transform=`perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`;
+  });
+  tilt.addEventListener('mouseleave', ()=> tilt.style.transform='perspective(900px) rotateY(0) rotateX(0)');
+}
+
+// ---------- Magnetic ----------
+document.querySelectorAll('.magnetic').forEach(btn=>{
+  btn.addEventListener('mousemove', e=>{ const r=btn.getBoundingClientRect(); btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.12-2}px)`; });
+  btn.addEventListener('mouseleave', ()=> btn.style.transform='');
+});
+
+// ---------- Portfolio filter ----------
+document.querySelectorAll('.filterBtn').forEach(b=> b.addEventListener('click', ()=>{
+  document.querySelectorAll('.filterBtn').forEach(x=>{ x.classList.remove('!bg-[rgba(43,111,255,.12)]','!border-[rgba(43,111,255,.4)]','text-white'); x.classList.add('text-[var(--muted)]'); });
+  b.classList.add('!bg-[rgba(43,111,255,.12)]','!border-[rgba(43,111,255,.4)]','text-white'); b.classList.remove('text-[var(--muted)]');
+  const f=b.dataset.filter;
+  document.querySelectorAll('.portfolio-item').forEach(it=>{
+    const show = f==='all' || it.dataset.cat===f;
+    it.style.display = show? '' : 'none';
+    if(show){ it.classList.remove('in'); requestAnimationFrame(()=>requestAnimationFrame(()=>it.classList.add('in'))); }
+  });
+}));
+
+// ---------- Project modal ----------
+function openProject(item){
+  document.getElementById('pmImg').src=item.dataset.img;
+  document.getElementById('pmTitle').textContent=item.dataset.title;
+  document.getElementById('pmDesc').textContent=item.dataset.desc;
+  document.getElementById('pmLink').href=item.dataset.link;
+  document.getElementById('pmTags').innerHTML=item.dataset.tags.split(',').map(t=>`<span class="chip text-[11px] px-3 py-1.5 bg-black/50 backdrop-blur text-white border-white/15">${t.trim()}</span>`).join('');
+  const m=document.getElementById('projectModal'); m.classList.remove('hidden'); m.classList.add('flex'); document.body.style.overflow='hidden';
+}
+function closeProject(){ const m=document.getElementById('projectModal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow=''; }
+document.getElementById('projectModal').addEventListener('click', e=>{ if(e.target.id==='projectModal') closeProject(); });
+
+// ---------- CV Preview + Download ----------
+function buildPreview(){
+  const sheet=document.getElementById('cvSheet');
+  const holder=document.getElementById('cvPreviewScale');
+  holder.innerHTML='';
+  const clone=sheet.cloneNode(true); clone.removeAttribute('id'); clone.style.width='100%'; clone.style.fontSize='90%';
+  // scale typography for preview
+  holder.appendChild(clone);
+}
+function openCVPreview(){
+  buildPreview();
+  const m=document.getElementById('cvModal'); m.classList.remove('hidden'); m.classList.add('flex'); document.body.style.overflow='hidden';
+}
+function closeCVPreview(){ const m=document.getElementById('cvModal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow=''; }
+document.getElementById('cvModal').addEventListener('click', e=>{ if(e.target.id==='cvModal') closeCVPreview(); });
+
+function setDlLoading(loading){
+  ['dlBtn1','dlBtn2'].forEach(id=>{
+    const b=document.getElementById(id); if(!b) return;
+    if(loading){ b.dataset.orig=b.innerHTML; b.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i><span>Membuat PDF...</span>'; b.style.pointerEvents='none'; b.style.opacity='.8'; }
+    else if(b.dataset.orig){ b.innerHTML=b.dataset.orig; b.style.pointerEvents=''; b.style.opacity=''; }
+  });
+}
+async function downloadCV(){
+  try{
+    setDlLoading(true);
+    showToast('Menyiapkan CV PDF — mohon tunggu...');
+    // preload image as base64 to avoid CORS taint
+    await inlineCVImage();
+    const el=document.getElementById('cvSheet');
+    const opt={ margin:0, filename:'CV-Danish-Zaidan-Dzaki-Naufaliffat.pdf', image:{type:'jpeg',quality:0.98}, html2canvas:{scale:2,useCORS:true,allowTaint:false,backgroundColor:'#ffffff',logging:false}, jsPDF:{unit:'mm',format:'a4',orientation:'portrait'} };
+    await html2pdf().set(opt).from(el).save();
+    showToast('CV berhasil diunduh! Cek folder Download.');
+  }catch(err){
+    console.error(err);
+    showToast('Gagal via engine — membuka mode cetak...');
+    setTimeout(()=>printCV(),800);
+  }finally{ setDlLoading(false); }
+}
+function inlineCVImage(){
+  return new Promise(resolve=>{
+    const img=document.getElementById('cvSheetImg');
+    const src=img.src;
+    const c=document.createElement('canvas'); const im=new Image(); im.crossOrigin='anonymous';
+    im.onload=()=>{ try{ c.width=im.naturalWidth; c.height=im.naturalHeight; c.getContext('2d').drawImage(im,0,0); img.src=c.toDataURL('image/jpeg',0.9); }catch(e){} resolve(); };
+    im.onerror=()=>resolve(); im.src=src;
+    setTimeout(resolve,2500);
+  });
+}
+function printCV(){
+  const sheet=document.getElementById('cvSheet').outerHTML;
+  const w=window.open('','_blank','width=900,height=1100');
+  w.document.write(`<html><head><title>CV - Danish Zaidan</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"><style>body{margin:0;background:#525659;display:flex;justify-content:center;padding:20px}*{box-sizing:border-box}</style></head><body>${sheet}<scr`+`ipt>window.onload=()=>setTimeout(()=>window.print(),600)</scr`+`ipt></body></html>`);
+  w.document.close();
+}
+
+// ---------- Helpers ----------
+function copyPhone(){ navigator.clipboard?.writeText('081392310525').then(()=>showToast('Nomor 081392310525 disalin!')).catch(()=>showToast('Nomor: 081392310525')); }
+function sendWA(){
+  const n=document.getElementById('msgName').value||'Halo';
+  const need=document.getElementById('msgNeed').value||'Kolaborasi';
+  const txt=document.getElementById('msgText').value||'Saya melihat portfolio Anda dan tertarik berdiskusi.';
+  window.open(`https://wa.me/6281392310525?text=${encodeURIComponent(`Halo Danish! Saya ${n} — ${need}: ${txt}`)}`,'_blank');
+  showToast('Membuka WhatsApp...');
+}
+let toastT;
+function showToast(msg){
+  const t=document.getElementById('toast'); document.getElementById('toastMsg').textContent=msg;
+  t.style.transform='translate(-50%,0)'; t.style.opacity='1';
+  clearTimeout(toastT); toastT=setTimeout(()=>{ t.style.transform='translate(-50%,6rem)'; t.style.opacity='0'; },2600);
+}
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ closeProject(); closeCVPreview(); }
+  if((e.key==='d'||e.key==='D') && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) downloadCV();
+});
+</script>
+</body>
+</html>
